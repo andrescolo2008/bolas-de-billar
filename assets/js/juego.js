@@ -10,7 +10,7 @@ let conjunto= [];
 // const tipos      = ['C','D','H','S'];
 let bolas=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 
-const especiales = ['A','J','Q','K'];
+// const especiales = ['A','J','Q','K'];
 
 let puntosJugador = 0,
     puntosComputadora = 0;
@@ -25,24 +25,37 @@ const divCartasComputadora = document.querySelector('#computadora-cartas');
 
 const puntosHTML = document.querySelectorAll('small');
 
-// Esta función crea un nuevo deck
+// (Esta función crea un nuevo deck) (Esta función crea un nuevo arreglo)
 const crearDeck = () => {
 
-    for( let i = 2; i <= 10; i++ ) {
-        for( let tipo of tipos ) {
-            deck.push( i + tipo);
-        }
-    }
+    // for( let i = 2; i <= 10; i++ ) {
+    //     for( let tipo of tipos ) {
+    //         conjunto.push( i + tipo);
+    //     }
+    // }
 
-    for( let tipo of tipos ) {
-        for( let esp of especiales ) {
-            deck.push( esp + tipo);
+    for( let i = 0; i < 15; i++ ) {
+            
+                conjunto.push( bolas[i]);
+            
         }
-    }
+
+
+        // for( let bola of bolas ) {
+
+        //     conjunto.push( bolas[bola]);
+        // }
+    
+
+    // for( let tipo of tipos ) {
+    //     for( let esp of especiales ) {
+    //         deck.push( esp + tipo);
+    //     }
+    // }
     // console.log( deck );
-    deck = _.shuffle( deck );
-    console.log( deck );
-    return deck;
+    conjunto = _.shuffle( conjunto );
+    console.log( conjunto );
+    return conjunto;
 }
 
 crearDeck();
